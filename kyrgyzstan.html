@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Place - Kyrgyzstan</title>
+    <style>
+        /* Base Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafafa;
+            font-family: 'Poppins', Arial, sans-serif;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            color: #2c3e50;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 200px;
+            background: linear-gradient(180deg, #16a085, #1abc9c);
+            padding-top: 50px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin: 10px 0;
+            width: 80%;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #f39c12;
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            margin-left: 220px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: calc(100% - 220px);
+        }
+
+        /* Fact Section and Image on Left */
+        .fact-section {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .fact-section img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-right: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .fact-text {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            flex-grow: 1;
+            transition: all 0.3s ease;
+        }
+
+        .fact-text:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .fact-text h2 {
+            color: #1abc9c;
+        }
+
+        /* Extra Information and Slideshow */
+        .extra-info-section {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .extra-info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            width: 48%;
+            transition: all 0.3s ease;
+        }
+
+        .extra-info:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .extra-info h2 {
+            color: #f39c12;
+        }
+
+        .slide-container {
+            width: 48%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .slides {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .slides.active {
+            opacity: 1;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 50%;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Mini Video Section */
+        .video-section {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .video-section iframe {
+            width: 100%;
+            height: 350px;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-section h2 {
+            color: #1abc9c;
+            margin-bottom: 10px;
+        }
+
+         /* Footer Styling */
+         footer {
+            background: linear-gradient(90deg, #3498db, #9b59b6);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Sidebar with links -->
+<div class="sidebar">
+    <a href="biodata.html">Home</a>
+    <a href="turkiye.html">Türkiye</a>
+    <a href="kyrgyzstan.html">Kyrgyzstan</a>
+</div>
+
+<!-- Main Content Area -->
+<div class="main-content">
+
+    <!-- Fact Section with Image on Left -->
+    <div class="fact-section">
+        <img src="images/kyrgyzstan1.jpg" alt="Kyrgyzstan Top Image">
+        <div>
+            <div class="fact-text">
+                <h2>Facts about Kyrgyzstan</h2>
+                <p>Kyrgyzstan, a landlocked country in Central Asia, is known for its breathtaking natural landscapes, including towering mountains, alpine lakes, and vast pastures. Its rich nomadic traditions, friendly people, and historical Silk Road influence make it a unique destination.</p>        
+            </div>
+            <div class="fact-text">
+                <h2>Why Kyrgyzstan?</h2> 
+                <p>Kyrgyzstan has been my dream destination ever since I came across it through the YouTube travelogue Rare TV. There’s something about the country’s raw natural beauty that has captivated me with the towering mountains, crystal-clear lakes like Issyk-Kul, and the rich nomadic traditions make it feel like an untouched paradise.<br>
+                What excites me the most is the idea of riding horses across the vast open landscapes, just like the nomads have done for centuries. I can already imagine myself galloping through the breathtaking valleys, feeling the fresh mountain air. The connection to nature and culture seems so authentic, and I’m eager to experience the warmth and hospitality of the Kyrgyz people.</p>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <!-- Extra Information and Slideshow -->
+    <div class="extra-info-section">
+        <div class="extra-info">
+            <h2>More about Kyrgyzstan</h2>
+            <p>Kyrgyzstan offers adventure and nature enthusiasts opportunities to trek in the Tien Shan mountains, visit Issyk-Kul Lake, and experience nomadic culture. The country is also home to a fascinating mix of ancient history and Soviet influence, making it a place full of stories.</p>
+        </div>
+
+        <div class="slide-container">
+            <img class="slides active" src="images/kyrgyzstan2.jpg" alt="Kyrgyzstan Slide 1">
+            <img class="slides" src="images/kyrgyzstan3.jpg" alt="Kyrgyzstan Slide 2">
+            <img class="slides" src="images/kyrgyzstan4.jpg" alt="Kyrgyzstan Slide 3">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Mini Video Section -->
+    <div class="video-section">
+        <h2>Watch a Video about Kyrgyzstan</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/lP9evI5lfjU?si=YimzwLiu7Bi8nDyM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+</div>
+
+<!-- JavaScript for slide functionality -->
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slides');
+
+    function showSlides(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+    }
+
+    function changeSlide(direction) {
+        slideIndex = (slideIndex + direction + slides.length) % slides.length;
+        showSlides(slideIndex);
+    }
+
+    // Auto-slide functionality
+    setInterval(() => {
+        changeSlide(1);
+    }, 3000); // Change slide every 3 seconds
+
+    // Initialize with the first slide visible
+    showSlides(0);
+</script>
+
+<footer>
+    <p>&copy; 2024 Nureen Haziqah Binti Mohd Hairudin | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

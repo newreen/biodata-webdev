@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Place - Türkiye</title>
+    <style>
+        /* Base Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Poppins', Arial, sans-serif;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            color: #333;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 200px;
+            background: linear-gradient(180deg, #16a085, #1abc9c);
+            padding-top: 50px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin: 10px 0;
+            width: 80%;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #f39c12;
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            margin-left: 220px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: calc(100% - 220px);
+        }
+
+        /* Fact Section and Image on Left */
+        .fact-section {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .fact-section img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-right: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .fact-text {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            flex-grow: 1;
+            transition: all 0.3s ease;
+        }
+
+        .fact-text:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .fact-text h2 {
+            color: #1abc9c;
+        }
+
+        /* Extra Information and Slideshow */
+        .extra-info-section {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .extra-info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            width: 48%;
+            transition: all 0.3s ease;
+        }
+
+        .extra-info:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .extra-info h2 {
+            color: #f39c12;
+        }
+
+        .slide-container {
+            width: 48%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .slides {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .slides.active {
+            opacity: 1;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 50%;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Mini Video Section */
+        .video-section {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .video-section iframe {
+            width: 100%;
+            height: 350px;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-section h2 {
+            color: #1abc9c;
+            margin-bottom: 10px;
+        }
+
+         /* Footer Styling */
+         footer {
+            background: linear-gradient(90deg, #3498db, #9b59b6);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sidebar with links -->
+<div class="sidebar">
+    <a href="biodata.html">Home</a>
+    <a href="turkiye.html">Türkiye</a>
+    <a href="kyrgyzstan.html">Kyrgyzstan</a>
+</div>
+
+<!-- Main Content Area -->
+<div class="main-content">
+
+    <!-- Fact Section with Image on Left -->
+    <div class="fact-section">
+        <img src="images/turkey1.jpg" alt="Türkiye Top Image">
+        <div>
+            <div class="fact-text">
+                <h2>Facts about Türkiye</h2>
+                <p>Türkiye, bridging Europe and Asia, is famous for its rich history, stunning landscapes, and vibrant culture. The country is home to iconic sites like the Hagia Sophia, the ancient ruins of Ephesus, and the natural beauty of Cappadocia’s fairy chimneys and hot air balloons.</p>        
+            </div>
+            <div class="fact-text">
+                <h2>Why Türkiye?</h2> 
+                <p>Visiting Türkiye has been a dream of mine since I was a child. It’s such a welcoming country for Muslims, full of rich Islamic heritage and modern attractions. I can easily imagine myself wandering through the historic streets of Istanbul and seeing the stunning hot air balloons over Cappadocia.<br>
+                    I picture myself in Cappadocia, watching the balloons lift off at dawn, filling the sky with beautiful shades of orange and pink. It’s a place that combines history and beauty while also connecting deeply with my faith. That’s why it’s a must-visit destination for me.</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Extra Information and Slideshow -->
+    <div class="extra-info-section">
+        <div class="extra-info">
+            <h2>More about Türkiye</h2>
+            <p>Türkiye is not only known for its history and culture but also for its natural wonders such as Cappadocia, Pamukkale, and the Mediterranean coastline. The country has been a crossroads of civilization, with influences from the Roman, Byzantine, and Ottoman Empires.</p>
+        </div>
+
+        <div class="slide-container">
+            <img class="slides active" src="images/turkey2.jpeg" alt="Türkiye Slide 1">
+            <img class="slides" src="images/turkey3.jpg" alt="Türkiye Slide 2">
+            <img class="slides" src="images/turkey4.jpg" alt="Türkiye Slide 3">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Mini Video Section -->
+    <div class="video-section">
+        <h2>Watch a Video about Türkiye</h2>
+        <iframe src="https://www.youtube.com/embed/2vqvBzb0xJY?si=kgRNyOBwkVo6fAj4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>    
+
+</div>
+
+<!-- JavaScript for slide functionality -->
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slides');
+
+    function showSlides(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+    }
+
+    function changeSlide(direction) {
+        slideIndex = (slideIndex + direction + slides.length) % slides.length;
+        showSlides(slideIndex);
+    }
+
+    // Auto slideshow
+    function autoSlide() {
+        changeSlide(1); // Move to the next slide
+    }
+
+    // Initialize with the first slide visible and auto-slide every 3 seconds
+    showSlides(slideIndex);
+    setInterval(autoSlide, 3000); // Slide will change every 3 seconds
+</script>
+
+<footer>
+    <p>&copy; 2024 Nureen Haziqah Binti Mohd Hairudin | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

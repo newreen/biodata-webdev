@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata</title>
+    <style>
+        /* Base Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Poppins', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #2c3e50;
+        }
+
+        /* Container to hold Sidebar and Main Content side by side */
+        .container {
+            display: flex;
+            flex: 1;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 220px;
+            background: linear-gradient(180deg, #16a085, #1abc9c);
+            padding-top: 50px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin: 10px 0;
+            width: 80%;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #f39c12;
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            margin-left: 240px;
+            padding: 40px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            background-color: #ecf0f1;
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Biodata Section with Flex for image and content side by side */
+        .biodata-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .biodata-section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .biodata-content {
+            display: flex;
+            align-items: center; /* Align the image and text vertically in the center */
+        }
+
+        .biodata-section h2 {
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+
+        .biodata-section p, .biodata-section ul {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        /* Circular Profile Image */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #3498db;
+            margin-right: 20px;
+            object-fit: cover;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Personal Interests */
+        .biodata-section ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        /* Links Styling */
+        a.btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #1abc9c;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        a.btn:hover {
+            background-color: #16a085;
+            transform: scale(1.05);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            margin-top: auto;
+            position: relative;
+            bottom: 0;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Container holding Sidebar and Main Content -->
+<div class="container">
+
+    <!-- Sidebar with links -->
+    <div class="sidebar">
+        <a href="biodata.html">Home</a>
+        <a href="turkiye.html">Türkiye</a>
+        <a href="kyrgyzstan.html">Kyrgyzstan</a>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+
+        <!-- Biodata Section with image on the left side -->
+        <div class="biodata-section">
+            <div class="biodata-content">
+                <!-- Circular Profile Image -->
+                <img src="images/profile pic nwrn.jpg" alt="Profile Image" class="profile-img">
+
+                <!-- Biodata Text -->
+                <div>
+                    <h2>Biodata</h2>
+                    <p><strong>Name:</strong> Nureen Haziqah Binti Mohd Hairudin</p>
+                    <p><strong>Date of Birth:</strong> 25 September 2002</p>
+                    <p><strong>Age:</strong> 22</p>
+                    <p><strong>Email:</strong> nureen.hziqh@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personal Interests Section -->
+        <div class="biodata-section">
+            <h2>Personal Interests</h2>
+            <ul>
+                <li>Playing with my cat</li>
+                <li>Photography</li>
+                <li>Listen to music</li>
+                <li>Reading</li>
+            </ul>
+        </div>
+
+        <!-- Future Plans Section -->
+        <div class="biodata-section">
+            <h2>Planning in Future</h2>
+            <p>In 2024, my primary focus will be on my studies, especially since it’s my final year. I also aim to stay active through outdoor activities and maintain a healthy worklife balance to support both my academic progress and overall well-being.
+            </div>
+
+        <!-- Links to other pages -->
+        <div class="biodata-section">
+            <p>Explore more about my favorite places:</p>
+            <a class="btn" href="turkiye.html">Türkiye</a>
+            <a class="btn" href="kyrgyzstan.html">Kyrgyzstan</a>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Nureen Haziqah Binti Mohd Hairudin | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
